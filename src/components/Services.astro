@@ -1,0 +1,63 @@
+---
+const services = [
+  {
+    title: "Agua para Consumo Humano",
+    description: "Diseño e instalación de sistemas para obtener agua descontaminada, nutritiva e hidratante en residencias, empresas e instituciones.",
+    image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    link: "/tratamiento-agua#consumo-humano"
+  },
+  {
+    title: "Análisis de Parámetros",
+    description: "Análisis completos de parámetros fisicoquímicos y microbiológicos del agua según la normatividad vigente (Resolución 2115 de 2007).",
+    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    link: "/servicios#analisis-parametros"
+  },
+  {
+    title: "Tratamiento de Gases y Vapores",
+    description: "Diseño, mantenimiento y reparación de instalaciones para el tratamiento de gases y vapores en la preparación de alimentos.",
+    image: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    link: "/servicios#tratamiento-gases"
+  }
+];
+---
+
+<section id="services" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Nuestros <span class="text-primary">Servicios</span></h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Ofrecemos una amplia gama de servicios diseñados para resolver sus problemas en el consumo y preparación de los alimentos, garantizando calidad e inocuidad.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {services.map((service, index) => (
+        <div 
+          class="group relative overflow-hidden rounded-xl shadow-lg"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+            <img 
+              src={service.image} 
+              alt={service.title} 
+              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent flex flex-col justify-end p-6 text-white">
+            <h3 class="text-xl font-bold mb-2">{service.title}</h3>
+            <p class="text-white/80 text-sm">{service.description}</p>
+            <a href={service.link} class="mt-4 inline-flex items-center text-accent hover:text-white">
+              Más información
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-16 flex justify-center" data-aos="fade-up" data-aos-delay="300">
+      <a href="/contacto" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-full font-medium transition-all">
+        Solicitar un Servicio
+      </a>
+    </div>
+  </div>
+</section>

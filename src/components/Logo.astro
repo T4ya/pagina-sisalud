@@ -1,0 +1,13 @@
+---
+interface Props {
+  color?: string;
+  size?: string;
+}
+
+const { color = "primary", size = "text-2xl" } = Astro.props;
+---
+
+<div class={`font-display font-bold ${size} flex items-center gap-2`}>
+  <span class={`text-3xl text-${color}`}><i class="fas fa-tint"></i></span>
+  <span class={`text-${color}`}>ALISALUD</span>
+</div>

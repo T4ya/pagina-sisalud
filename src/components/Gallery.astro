@@ -1,0 +1,116 @@
+---
+---
+<section id="gallery" class="py-20 bg-light">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Nuestra <span class="text-primary">Galería</span></h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Conozca nuestras instalaciones y explore el trabajo innovador que realizamos para garantizar agua de calidad y alimentos seguros.</p>
+    </div>
+    
+    <div class="swiper-container" data-aos="fade-up">
+      <div class="swiper-wrapper">
+        <!-- Los slides del Swiper se poblarán mediante JavaScript -->
+      </div>
+      <div class="swiper-pagination mt-8"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/pagination';
+  
+  document.addEventListener('astro:page-load', () => {
+    // Imágenes de la galería
+    const galleryImages = [
+      {
+        url: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        caption: "Laboratorio de Análisis Microbiológico"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        caption: "Análisis de Calidad del Agua"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1583912086096-8c60d75a53f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        caption: "Ósmosis Inversa"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1564325724739-bae0bd08762c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        caption: "Tratamiento de Agua Residencial"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        caption: "Investigación en Tratamiento de Agua"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1588812648204-1c3ab1e0a274?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        caption: "Tecnología de Purificación"
+      }
+    ];
+    
+    // Crear slides de la galería
+    const swiperWrapper = document.querySelector('.swiper-wrapper');
+    if (swiperWrapper) {
+      galleryImages.forEach(image => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        
+        slide.innerHTML = `
+          <div class="relative group overflow-hidden rounded-xl">
+            <img src="${image.url}" alt="${image.caption}" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <p class="text-white font-medium">${image.caption}</p>
+            </div>
+          </div>
+        `;
+        
+        swiperWrapper.appendChild(slide);
+      });
+    }
+    
+    // Inicializar Swiper
+    const swiperContainer = document.querySelector('.swiper-container');
+    if (swiperContainer) {
+      const swiper = new Swiper(swiperContainer as Element, {
+        modules: [Navigation, Pagination, Autoplay],
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  .swiper-container {
+    padding-bottom: 50px;
+  }
+  
+  :global(.swiper-pagination-bullet) {
+    background: #3c8c3c;
+    opacity: 0.5;
+  }
+  
+  :global(.swiper-pagination-bullet-active) {
+    background: #1a5d1a;
+    opacity: 1;
+  }
+</style>

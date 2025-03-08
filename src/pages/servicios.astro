@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const servicios = [
+  {
+    id: "analisis-microbiologicos",
+    title: "Análisis Microbiológicos",
+    description: "Evaluación especializada para detectar microorganismos patógenos en agua y alimentos, garantizando su inocuidad según normativas vigentes.",
+    image: "https://images.unsplash.com/photo-1581092921461-39b0dc145f0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    details: [
+      "Detección de bacterias patógenas",
+      "Análisis de coliformes totales y fecales",
+      "Recuento de microorganismos mesófilos",
+      "Detección de Salmonella, E. coli y otros patógenos",
+      "Análisis de hongos y levaduras"
+    ]
+  },
+  {
+    id: "analisis-fisicoquimicos",
+    title: "Análisis Fisicoquímicos",
+    description: "Evaluación completa de parámetros químicos y físicos del agua para determinar su calidad y cumplimiento normativo.",
+    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    details: [
+      "Medición de pH y alcalinidad",
+      "Evaluación de dureza total (carbonato de calcio)",
+      "Análisis de sólidos suspendidos y disueltos",
+      "Detección de metales pesados (Mercurio, Arsénico, Plomo)",
+      "Análisis de nitratos, nitritos y compuestos orgánicos"
+    ]
+  },
+  {
+    id: "analisis-parametros",
+    title: "Análisis de Parámetros del Agua",
+    description: "Evaluación integral de parámetros establecidos en la Resolución 2115 de 2007 para garantizar agua potable segura.",
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    details: [
+      "Evaluación de alcalinidad total (100-200 ppm como carbonato de calcio)",
+      "Medición de dureza total (100-300 ppm como carbonato de calcio)",
+      "Verificación de ausencia de patógenos y sedimentos",
+      "Análisis de traslucidez, sabor y olor característicos",
+      "Medición de niveles de potasio y sodio (15-50 ppm)",
+      "Determinación de pH (mayor a 7,1)"
+    ]
+  },
+  {
+    id: "tratamiento-gases",
+    title: "Tratamiento de Gases y Vapores",
+    description: "Diseño, mantenimiento y reparación de instalaciones para el tratamiento de gases y vapores generados en la preparación de alimentos.",
+    image: "https://images.unsplash.com/photo-1588485256313-db9cc8502a14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    details: [
+      "Instalación de sistemas de ventilación industrial",
+      "Diseño de campanas extractoras eficientes",
+      "Sistemas de filtración de gases contaminantes",
+      "Mantenimiento preventivo y correctivo de equipos",
+      "Soluciones personalizadas para cocinas industriales y restaurantes"
+    ]
+  },
+  {
+    id: "soluciones",
+    title: "Soluciones Sostenibles",
+    description: "Implementación de tecnologías y procesos sostenibles para el tratamiento de agua y la preparación segura de alimentos.",
+    image: "https://images.unsplash.com/photo-1628595351029-c2bf17511435?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    details: [
+      "Sistemas de bajo consumo energético",
+      "Reutilización de agua tratada",
+      "Reducción de la huella ambiental",
+      "Optimización de procesos de tratamiento",
+      "Implementación de tecnologías verdes"
+    ]
+  }
+];
+---
+
+<Layout title="Servicios - Laboratorios Alisalud">
+  <Navbar />
+  
+  <section class="pt-28 pb-16 bg-light">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">Nuestros <span class="text-primary">Servicios</span></h1>
+        <p class="text-lg text-gray-600 mb-8">Soluciones completas para sus necesidades de análisis y tratamiento de agua y alimentos.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      {servicios.map((servicio, index) => (
+        <div id={servicio.id} class={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 ${index > 0 ? 'mt-24' : ''}`}>
+          <div class="md:w-1/2" data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
+            <h2 class="text-3xl font-display font-bold mb-6">{servicio.title}</h2>
+            <p class="text-lg text-gray-600 mb-6">{servicio.description}</p>
+            
+            <ul class="space-y-3">
+              {servicio.details.map((detail) => (
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                  <span>{detail}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <a href="/contacto" class="inline-flex items-center bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full font-medium transition-all mt-8">
+              Solicitar este servicio
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+          
+          <div class="md:w-1/2" data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}>
+            <img 
+              src={servicio.image} 
+              alt={servicio.title} 
+              class="rounded-xl shadow-lg w-full h-auto"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+  
+  <section class="py-16 bg-light">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-display font-bold mb-6">¿Necesita un servicio personalizado?</h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Contáctenos para discutir sus necesidades específicas y desarrollar una solución a medida para su hogar, empresa o institución.
+      </p>
+      
+      <a href="/contacto" class="inline-flex items-center bg-primary hover:bg-secondary text-white px-8 py-4 rounded-full font-medium transition-all">
+        Contactar ahora
+        <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

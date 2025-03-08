@@ -1,0 +1,61 @@
+---
+const features = [
+  {
+    icon: "fa-tint",
+    title: "Tratamiento de Agua",
+    description: "Diseño, mantenimiento y reparación de sistemas para obtener agua descontaminada, nutritiva e hidratante en residencias y empresas.",
+    link: "/tratamiento-agua"
+  },
+  {
+    icon: "fa-vial",
+    title: "Análisis Microbiológicos",
+    description: "Pruebas especializadas para detectar patógenos y garantizar la inocuidad en el consumo de alimentos y agua.",
+    link: "/servicios#analisis"
+  },
+  {
+    icon: "fa-flask",
+    title: "Análisis Fisicoquímicos",
+    description: "Evaluación detallada de parámetros como pH, alcalinidad, dureza y detección de metales pesados en agua y alimentos.",
+    link: "/servicios#analisis-fisicoquimicos"
+  },
+  {
+    icon: "fa-leaf",
+    title: "Soluciones Sostenibles",
+    description: "Desarrollo de tecnologías y procesos respetuosos con el medio ambiente para el tratamiento de agua y alimentos.",
+    link: "/servicios#soluciones"
+  }
+];
+---
+
+<section id="features" class="py-20 bg-gradient-to-b from-light to-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Nuestras <span class="text-primary">Características</span></h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Descubra lo que hace que nuestro laboratorio se destaque, con enfoques innovadores y compromiso con la excelencia en el tratamiento de agua y análisis de alimentos.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {features.map((feature, index) => (
+        <a 
+          href={feature.link}
+          class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-all">
+            <i class={`fas ${feature.icon} text-2xl text-primary`}></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">{feature.title}</h3>
+          <p class="text-gray-600">{feature.description}</p>
+        </a>
+      ))}
+    </div>
+    
+    <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="400">
+      <a href="/servicios" class="inline-flex items-center text-primary font-medium hover:text-secondary">
+        Conozca más sobre nuestros servicios
+        <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </div>
+</section>

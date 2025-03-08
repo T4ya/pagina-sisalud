@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout title="Contacto - Laboratorios Alisalud">
+  <Navbar />
+  
+  <section class="pt-28 pb-16 bg-light">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">Contáctenos</h1>
+        <p class="text-lg text-gray-600 mb-8">Estamos aquí para ayudarle con todas sus necesidades de análisis y tratamiento de agua y alimentos.</p>
+      </div>
+    </div>
+  </section>
+  
+  <Contact />
+  
+  <section class="py-16 bg-light">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-display font-bold text-center mb-12">Preguntas <span class="text-primary">Frecuentes</span></h2>
+        
+        <div class="space-y-6" data-aos="fade-up">
+          <div class="p-6 bg-white rounded-xl shadow-md">
+            <h3 class="text-xl font-bold mb-3">¿Qué servicios ofrecen para residencias particulares?</h3>
+            <p class="text-gray-600">
+              Para residencias particulares, ofrecemos sistemas compactos de tratamiento de agua que incluyen ósmosis inversa para eliminar contaminantes como metales pesados, pesticidas y microplásticos. También realizamos análisis del agua para determinar su calidad actual y recomendamos las soluciones más adecuadas para su hogar.
+            </p>
+          </div>
+          
+          <div class="p-6 bg-white rounded-xl shadow-md">
+            <h3 class="text-xl font-bold mb-3">¿Cuánto tiempo tarda el proceso de instalación de un sistema de tratamiento?</h3>
+            <p class="text-gray-600">
+              El tiempo de instalación varía según el tipo de sistema. Para residencias particulares, la instalación suele completarse en 1-2 días. Para empresas e instituciones, el proceso puede tardar entre 3-7 días dependiendo de la complejidad del sistema y las necesidades específicas.
+            </p>
+          </div>
+          
+          <div class="p-6 bg-white rounded-xl shadow-md">
+            <h3 class="text-xl font-bold mb-3">¿Ofrecen servicio de mantenimiento para los sistemas instalados?</h3>
+            <p class="text-gray-600">
+              Sí, ofrecemos servicios de mantenimiento preventivo y correctivo para todos los sistemas que instalamos. Recomendamos un mantenimiento regular cada 6 meses para sistemas residenciales y cada 3 meses para sistemas comerciales e industriales. También proporcionamos contratos de mantenimiento con diferentes planes según sus necesidades.
+            </p>
+          </div>
+          
+          <div class="p-6 bg-white rounded-xl shadow-md">
+            <h3 class="text-xl font-bold mb-3">¿Qué normativas cumplen sus sistemas de tratamiento?</h3>
+            <p class="text-gray-600">
+              Todos nuestros sistemas cumplen con la normatividad vigente, incluyendo la Resolución 2115 de 2007, las normativas de la OMS, la Norma ISO 14001 de 2004, la Norma ISO 22000 de 2005, la Norma NTC3525 del agua envasada y la Norma NTC 539 para materiales en contacto con agua potable.
+            </p>
+          </div>
+          
+          <div class="p-6 bg-white rounded-xl shadow-md">
+            <h3 class="text-xl font-bold mb-3">¿Realizan análisis de agua a domicilio?</h3>
+            <p class="text-gray-600">
+              Sí, ofrecemos servicios de toma de muestras a domicilio. Nuestros técnicos capacitados acuden a su ubicación para recolectar muestras siguiendo los protocolos adecuados. Las muestras son analizadas en nuestro laboratorio y los resultados se entregan en un plazo de 3-5 días hábiles, junto con recomendaciones específicas basadas en los resultados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-display font-bold mb-6">Solicite una Consulta Gratuita</h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Ofrecemos una consulta inicial sin costo para evaluar sus necesidades y proporcionarle las mejores soluciones para su hogar, empresa o institución.
+      </p>
+      
+      <a href="#contact" class="inline-flex items-center bg-primary hover:bg-secondary text-white px-8 py-4 rounded-full font-medium transition-all">
+        Agendar consulta
+        <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

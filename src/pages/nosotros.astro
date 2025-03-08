@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Nosotros - Laboratorios Alisalud">
+  <Navbar />
+  
+  <section class="pt-28 pb-16 bg-light">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">Sobre <span class="text-primary">Nosotros</span></h1>
+        <p class="text-lg text-gray-600 mb-8">Conozca más sobre nuestra trayectoria y compromiso con la calidad del agua y los alimentos.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2" data-aos="fade-right">
+          <h2 class="text-3xl font-display font-bold mb-6">Nuestra <span class="text-primary">Misión</span></h2>
+          <div class="prose prose-lg">
+            <p>
+              Proveer oportunamente a nuestros clientes de la solución a los problemas de salud originados en el consumo y preparación de los alimentos, con los análisis microbiológicos, fisicoquímicos y ambientales necesarios, apoyándolos permanentemente en el diseño y mantenimiento de sus procesos de tratamiento, basados en la normatividad vigente, con sentido ético, responsabilidad social y dotando de las habilidades y competencias necesarias al equipo de trabajo, con el fin de lograr cada vez un mejor servicio a los colombianos.
+            </p>
+          </div>
+        </div>
+        
+        <div class="md:w-1/2" data-aos="fade-left">
+          <img 
+            src="https://images.unsplash.com/photo-1581093458791-9d21ca8e3f1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+            alt="Misión Laboratorios Alisalud" 
+            class="rounded-xl shadow-lg w-full h-auto"
+          />
+        </div>
+      </div>
+      
+      <div class="flex flex-col md:flex-row-reverse items-center gap-12 mt-20">
+        <div class="md:w-1/2" data-aos="fade-left">
+          <h2 class="text-3xl font-display font-bold mb-6">Nuestra <span class="text-primary">Visión</span></h2>
+          <div class="prose prose-lg">
+            <p>
+              Laboratorios Alisalud, será en el 2030 la herramienta más efectiva de obtener los nutrimentos de energía e hidratación necesarios para niños, jóvenes y adultos en el hogar, trabajo o deporte, como proveedor preferido en efectividad y trato a sus clientes.
+            </p>
+          </div>
+        </div>
+        
+        <div class="md:w-1/2" data-aos="fade-right">
+          <img 
+            src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+            alt="Visión Laboratorios Alisalud" 
+            class="rounded-xl shadow-lg w-full h-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-display font-bold text-center mb-12">Nuestros <span class="text-primary">Valores</span></h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-microscope text-2xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Excelencia Técnica</h3>
+          <p class="text-gray-600">
+            Nos comprometemos a mantener los más altos estándares de precisión y calidad en todos nuestros análisis y servicios, aplicando metodologías científicas rigurosas.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-handshake text-2xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Responsabilidad Social</h3>
+          <p class="text-gray-600">
+            Asumimos el compromiso de contribuir al bienestar de la sociedad mediante la promoción de prácticas seguras en el consumo y preparación de alimentos.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-leaf text-2xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Sostenibilidad</h3>
+          <p class="text-gray-600">
+            Promovemos el cuidado del medio ambiente a través de procesos responsables y soluciones que minimizan el impacto ambiental en todos nuestros servicios.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-display font-bold text-center mb-12">Nuestra <span class="text-primary">Normatividad</span></h2>
+        
+        <div class="space-y-6" data-aos="fade-up">
+          <div class="p-6 bg-light rounded-xl">
+            <h3 class="text-xl font-bold mb-2">Resolución 683 de 2012</h3>
+            <p class="text-gray-600">Regulación sobre envases para alimentos y bebidas.</p>
+          </div>
+          
+          <div class="p-6 bg-light rounded-xl">
+            <h3 class="text-xl font-bold mb-2">Resolución 2674 de 2013</h3>
+            <p class="text-gray-600">Requisitos sanitarios para la fabricación, procesamiento, preparación, envase, almacenamiento, transporte, distribución y comercialización de alimentos.</p>
+          </div>
+          
+          <div class="p-6 bg-light rounded-xl">
+            <h3 class="text-xl font-bold mb-2">Normatividad de la OMS del agua</h3>
+            <p class="text-gray-600">Directrices para la calidad del agua potable establecidas por la Organización Mundial de la Salud.</p>
+          </div>
+          
+          <div class="p-6 bg-light rounded-xl">
+            <h3 class="text-xl font-bold mb-2">Norma ISO 14001 de 2004</h3>
+            <p class="text-gray-600">Estándar internacional de gestión ambiental.</p>
+          </div>
+          
+          <div class="p-6 bg-light rounded-xl">
+            <h3 class="text-xl font-bold mb-2">Norma ISO 22000 de 2005</h3>
+            <p class="text-gray-600">Estándar internacional para la gestión de la inocuidad alimentaria.</p>
+          </div>
+          
+          <div class="p-6 bg-light rounded-xl">
+            <h3 class="text-xl font-bold mb-2">Norma NTC3525 del agua envasada</h3>
+            <p class="text-gray-600">Norma técnica colombiana para agua potable tratada, envasada y destinada al consumo humano.</p>
+          </div>
+          
+          <div class="p-6 bg-light rounded-xl">
+            <h3 class="text-xl font-bold mb-2">Resolución 2115 de 2007</h3>
+            <p class="text-gray-600">Características, instrumentos básicos y frecuencias del sistema de control y vigilancia para la calidad del agua para consumo humano.</p>
+          </div>
+          
+          <div class="p-6 bg-light rounded-xl">
+            <h3 class="text-xl font-bold mb-2">Norma NTC 539</h3>
+            <p class="text-gray-600">Evaluación de contaminación por materiales para el agua potable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

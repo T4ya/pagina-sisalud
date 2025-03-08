@@ -1,0 +1,120 @@
+---
+// Asegúrate de haber actualizado Astro a la última versión
+// La importación correcta para ViewTransitions
+import { ViewTransitions } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Laboratorios Alisalud", 
+  description = "La solución a sus problemas en el consumo y preparación de los alimentos" 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    
+    <!-- ViewTransitions para animaciones de navegación -->
+    <ViewTransitions />
+  </head>
+  <body class="bg-light text-dark min-h-screen">
+    <div id="page-wrapper" class="overflow-hidden">
+      <slot />
+    </div>
+
+    <!-- Scripts -->
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script is:inline>
+      // Inicializar AOS cuando cambia la página
+      document.addEventListener('astro:page-load', () => {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: false,
+          mirror: false
+        });
+      });
+      
+      // Inicializar AOS en la carga inicial
+      document.addEventListener('DOMContentLoaded', () => {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: false,
+          mirror: false
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #e6f7ff; /* Fondo azul claro */
+    overflow-x: hidden;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #e6f7ff; /* Color de fondo azul claro */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #1e73be; /* Color principal */
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0d3c61; /* Color oscuro */
+  }
+
+  /* Smooth transitions */
+  a, button {
+    transition: all 0.3s ease;
+  }
+
+  /* Animation classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>

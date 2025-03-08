@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Services from '../components/Services.astro';
+import Gallery from '../components/Gallery.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Laboratorios Alisalud - La solución a sus problemas en el consumo de los alimentos">
+  <Navbar />
+  <Hero />
+  <Features />
+  <Services />
+  <Gallery />
+  <Contact />
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  
+  document.addEventListener('astro:page-load', () => {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Animar sección hero
+    const heroTitle = document.querySelector('#hero h1');
+    const heroParagraph = document.querySelector('#hero p');
+    const heroButtons = document.querySelector('#hero .flex.flex-wrap');
+    
+    if (heroTitle) {
+      gsap.from(heroTitle, { 
+        opacity: 0, 
+        y: 50, 
+        duration: 1,
+        delay: 0.2
+      });
+    }
+    
+    if (heroParagraph) {
+      gsap.from(heroParagraph, { 
+        opacity: 0, 
+        y: 30, 
+        duration: 1,
+        delay: 0.4
+      });
+    }
+    
+    if (heroButtons) {
+      gsap.from(heroButtons, { 
+        opacity: 0, 
+        y: 30, 
+        duration: 1,
+        delay: 0.6
+      });
+    }
+    
+    // Animaciones de scroll
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach((section, i) => {
+      if (i === 0) return; // Omitir sección hero
+      
+      ScrollTrigger.create({
+        trigger: section as Element,
+        start: 'top 80%',
+        onEnter: () => {
+          gsap.to(section as Element, { 
+            opacity: 1, 
+            y: 0, 
+            duration: 0.8,
+            ease: 'power2.out'
+          });
+        },
+        once: true
+      });
+    });
+  });
+</script>

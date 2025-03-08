@@ -1,0 +1,220 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const procesos = [
+  {
+    title: "Coagulación y Floculación",
+    description: "Primera fase donde se acumulan la mayoría de contaminantes del agua cruda para su posterior separación.",
+    icon: "fa-water"
+  },
+  {
+    title: "Sedimentación",
+    description: "Proceso por el cual se separan los sólidos en suspensión que se han aglomerado tras la coagulación y floculación.",
+    icon: "fa-filter"
+  },
+  {
+    title: "Filtración",
+    description: "El agua clarificada se pule en filtros de arena y carbón que retienen sabor, color y coloración residual.",
+    icon: "fa-fill-drip"
+  },
+  {
+    title: "Intercambio Iónico",
+    description: "El agua limpia se ablanda y suaviza en celdas de intercambio iónico, reteniendo iones y algunos metales pesados.",
+    icon: "fa-exchange-alt"
+  },
+  {
+    title: "Ósmosis Inversa",
+    description: "Proceso final que garantiza la extracción de contaminantes bioacumulables como mercurio, arsénico, plomo y microplásticos.",
+    icon: "fa-tint-slash"
+  }
+];
+
+const tiposAgua = [
+  {
+    id: "agua-municipal",
+    title: "Agua para Consumo Humano Municipal",
+    description: "Tratamiento a gran escala para garantizar agua potable segura a nivel municipal, cumpliendo con la normatividad vigente.",
+    image: "https://images.unsplash.com/photo-1626168788483-f4ecf5202335?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    puntos: [
+      "Mantenimiento natural de cuencas de abastecimiento",
+      "Control efectivo de vertimientos a fuentes de extracción",
+      "Tratamiento en calidad y cantidad según normatividad vigente",
+      "Proyección para crecimiento poblacional a 20 años",
+      "Tratamiento de aguas residuales y pluviales"
+    ]
+  },
+  {
+    id: "agua-particular",
+    title: "Agua para Consumo Humano Particular",
+    description: "Tratamiento para fuentes de agua subterránea o superficial para uso en empresas e instituciones bajo normativas BPM y HACCP.",
+    image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    puntos: [
+      "Análisis completo de la fuente de agua",
+      "Diseño personalizado del sistema de tratamiento",
+      "Implementación bajo normativas BPM y HACCP",
+      "Minimización del impacto ambiental",
+      "Mantenimiento preventivo programado"
+    ]
+  },
+  {
+    id: "consumo-humano",
+    title: "Agua para Consumo Humano Residencial",
+    description: "Sistemas diseñados para producir agua vital que garantice la hidratación necesaria y mantenga un pH ligeramente alcalino para proteger el metabolismo.",
+    image: "https://images.unsplash.com/photo-1525913992416-6238294644aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    puntos: [
+      "Separación efectiva de contaminantes no eliminados en plantas municipales",
+      "Mantenimiento de pH ligeramente alcalino (>7.1)",
+      "Reducción de metales pesados y microplásticos",
+      "Sistemas compactos para uso residencial",
+      "Bajo mantenimiento y alta eficiencia"
+    ]
+  }
+];
+---
+
+<Layout title="Tratamiento de Agua - Laboratorios Alisalud">
+  <Navbar />
+  
+  <section class="pt-28 pb-16 bg-light">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">Tratamiento de <span class="text-primary">Agua</span></h1>
+        <p class="text-lg text-gray-600 mb-8">Soluciones avanzadas para obtener agua descontaminada, nutritiva e hidratante para residencias, empresas e instituciones.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-display font-bold text-center mb-12">El Problema del Agua</h2>
+        
+        <div class="prose prose-lg max-w-none" data-aos="fade-up">
+          <p>
+            Hemos encontrado que usted no está consumiendo el agua de la calidad que espera, ya que por análisis de Laboratorios Alisalud se evidencia que, por ejemplo el tratamiento en las grandes ciudades, no se puede cumplir con los parámetros de calidad exigidos debido a los excesos en el vertimiento de aguas con Mercurio, generado por la actividad volcánica y la minería ilegal; el Arsénico, residuo de Pesticidas, Herbicidas y fungicidas; medicamentos, hormonas y antibióticos por el escaso tratamiento de las aguas de alcantarillado y el no tratamiento de las aguas lluvias.
+          </p>
+        </div>
+        
+        <div class="mt-12" data-aos="fade-up">
+          <h3 class="text-2xl font-bold mb-6">Categorías de Necesidad de Tratamiento</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            {tiposAgua.map(tipo => (
+              <a href={`#${tipo.id}`} class="bg-light p-6 rounded-xl hover:shadow-lg transition-all">
+                <h4 class="text-xl font-bold mb-3">{tipo.title}</h4>
+                <p class="text-gray-600 text-sm">{tipo.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="procesos" class="py-16 bg-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-display font-bold text-center mb-12">Nuestros <span class="text-primary">Procesos de Separación</span></h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {procesos.map((proceso, index) => (
+          <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay={index * 100}>
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class={`fas ${proceso.icon} text-2xl text-primary`}></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">{proceso.title}</h3>
+            <p class="text-gray-600">{proceso.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section id="osmosis" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2" data-aos="fade-right">
+          <h2 class="text-3xl font-display font-bold mb-6">Ósmosis Inversa</h2>
+          <div class="prose prose-lg">
+            <p>
+              La ósmosis inversa es un proceso de separación que utiliza una membrana semipermeable para separar las moléculas de agua de otras sustancias. Este proceso aplica presión para superar la presión osmótica que favorece la distribución uniforme.
+            </p>
+            <p>
+              Es en la ósmosis inversa donde se garantiza la extracción de contaminantes bioacumulables que degeneran la calidad de vida, como Mercurio, Arsénico, Plomo, herbicidas, pesticidas, fungicidas, medicamentos, antibióticos, hormonas y micro-plásticos en general.
+            </p>
+            <p>
+              Nuestros sistemas de ósmosis inversa están diseñados para proveer agua de alta calidad que cumple con todos los parámetros establecidos en la normatividad vigente, asegurando su inocuidad y aporte nutritivo.
+            </p>
+          </div>
+          
+          <a href="/contacto" class="inline-flex items-center bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full font-medium transition-all mt-6">
+            Solicitar información
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+        
+        <div class="md:w-1/2" data-aos="fade-left">
+          <img 
+            src="https://images.unsplash.com/photo-1583912086096-8c60d75a53f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+            alt="Sistema de Ósmosis Inversa" 
+            class="rounded-xl shadow-lg w-full h-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="sistemas" class="py-16 bg-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-display font-bold text-center mb-12">Sistemas de Tratamiento <span class="text-primary">por Categoría</span></h2>
+      
+      {tiposAgua.map((tipo, index) => (
+        <div id={tipo.id} class={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 ${index > 0 ? 'mt-24' : ''}`}>
+          <div class="md:w-1/2" data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
+            <h3 class="text-2xl font-bold mb-4">{tipo.title}</h3>
+            <p class="text-gray-600 mb-6">{tipo.description}</p>
+            
+            <ul class="space-y-3">
+              {tipo.puntos.map((punto) => (
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                  <span>{punto}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <a href="/contacto" class="inline-flex items-center bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full font-medium transition-all mt-8">
+              Consultar opciones
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+          
+          <div class="md:w-1/2" data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}>
+            <img 
+              src={tipo.image} 
+              alt={tipo.title} 
+              class="rounded-xl shadow-lg w-full h-auto"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+  
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-display font-bold mb-6">¿Listo para mejorar la calidad de su agua?</h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Contáctenos hoy mismo para una evaluación personalizada y un presupuesto adaptado a sus necesidades específicas.
+      </p>
+      
+      <a href="/contacto" class="inline-flex items-center bg-primary hover:bg-secondary text-white px-8 py-4 rounded-full font-medium transition-all">
+        Solicitar presupuesto
+        <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
